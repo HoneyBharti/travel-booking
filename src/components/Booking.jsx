@@ -57,32 +57,74 @@ const Booking = () => {
         </div>
       </div>
       
-        {/* Top Tabs - Mobile optimized */}
-        <div className="flex justify-center overflow-x-auto w-full mb-4">
-          <div className="flex items-center justify-center bg-gradient-to-r from-[#2C4224] to-[#3F5F34] rounded-lg overflow-hidden shadow-lg w-full">
-            
-            {["Trains", "Flights", "Hotels", "Bus Tickets"].map((item, index) => (
+        {/* ================= TOP TABS ================= */}
+        <div className="flex justify-center w-full mb-4">
+          <div className="flex items-center justify-between bg-gradient-to-r from-[#2C4224] to-[#3F5F34] rounded-lg shadow-lg w-full max-w-full px-1 sm:px-2">
+
+            {["Trains", "Flights", "Hotels", "Bus"].map((item, index) => (
               <div
                 key={index}
-                className="flex-1 px-2 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-5 lg:py-7 text-white text-xs sm:text-sm md:text-base font-medium border-r border-white/20 last:border-r-0 whitespace-nowrap text-center hover:bg-white/10 transition"
+                className="
+                  flex-1
+                  py-1.5
+                  sm:py-3
+                  md:py-5
+                  lg:py-7
+                  text-white
+                  text-[10px]
+                  sm:text-sm
+                  md:text-base
+                  font-medium
+                  border-r border-white/20 last:border-r-0
+                  text-center
+                  whitespace-nowrap
+                  transition
+                "
               >
                 {item}
               </div>
             ))}
 
-            <div className="px-3 sm:px-6 md:px-8 lg:px-12 py-2 sm:py-3 md:py-5 lg:py-7 bg-[#FFB500] text-black font-bold text-xs sm:text-sm md:text-base whitespace-nowrap hover:bg-[#FFC500] transition border-4 border-[#3F5F34] rounded-md flex-shrink-0">
+            <div
+              className="
+                px-1.5
+                sm:px-6
+                md:px-8
+                lg:px-12
+                py-1.5
+                sm:py-3
+                md:py-5
+                lg:py-7
+                bg-[#FFB500]
+                text-black
+                font-bold
+                text-[10px]
+                sm:text-sm
+                md:text-base
+                whitespace-nowrap
+                transition
+                border-[2px]
+                sm:border-4
+                border-[#3F5F34]
+                rounded-md
+                flex-shrink-0
+              "
+            >
               Coming Soon
             </div>
+
           </div>
         </div>
+        {/* ================= END TOP TABS ================= */}
 
-        {/* Dot Indicator */}
-        <div className="flex justify-center mt-2 sm:mt-4 md:mt-6">
+
+        {/* Dot Indicator (HIDDEN ON MOBILE) */}
+        <div className="hidden sm:flex justify-center mt-2 sm:mt-4 md:mt-6">
           <div className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-[#2C4224] rounded-full -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-32"></div>
         </div>
 
-        {/* Launching Soon Bar */}
-        <div className="flex justify-center mt-3 md:mt-4 px-0">
+        {/* Launching Soon Bar (HIDDEN ON MOBILE) */}
+        <div className="hidden sm:flex justify-center mt-3 md:mt-4 px-0">
           <div className="bg-gradient-to-r from-[#2C4224] to-[#3F5F34] text-white px-3 sm:px-8 md:px-16 lg:px-24 py-2 sm:py-3 md:py-4 lg:py-5 rounded-lg shadow-lg text-center font-semibold text-xs sm:text-sm md:text-base w-[55%] sm:w-[50%] md:w-[60%] -ml-16 sm:-ml-20 md:-ml-24 lg:-ml-32">
             Bookings launching soon
           </div>
@@ -96,26 +138,11 @@ const Booking = () => {
             spaceBetween={15}
             slidesPerView={1}
             breakpoints={{
-              480: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-              },
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              900: {
-                slidesPerView: 2,
-                spaceBetween: 25,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              1280: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              }
+              480: { slidesPerView: 1, spaceBetween: 15 },
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              900: { slidesPerView: 2, spaceBetween: 25 },
+              1024: { slidesPerView: 3, spaceBetween: 30 },
+              1280: { slidesPerView: 3, spaceBetween: 40 }
             }}
             navigation={{
               nextEl: ".booking-next",
@@ -173,21 +200,18 @@ const Booking = () => {
             }}
             className="promo-swiper w-full"
           >
-            {/* Banner 1 */}
             <SwiperSlide>
               <div className="w-full h-40 sm:h-56 md:h-72 lg:h-80 xl:h-96 rounded-lg overflow-hidden shadow-lg">
                 <img src={demo2} alt="Promotional banner 1" className="w-full h-full object-cover" />
               </div>
             </SwiperSlide>
 
-            {/* Banner 2 */}
             <SwiperSlide>
               <div className="w-full h-40 sm:h-56 md:h-72 lg:h-80 xl:h-96 rounded-lg overflow-hidden shadow-lg">
                 <img src={demo3} alt="Promotional banner 2" className="w-full h-full object-cover" />
               </div>
             </SwiperSlide>
 
-            {/* Banner 3 */}
             <SwiperSlide>
               <div className="w-full h-40 sm:h-56 md:h-72 lg:h-80 xl:h-96 rounded-lg overflow-hidden shadow-lg">
                 <img src={demo5} alt="Promotional banner 3" className="w-full h-full object-cover" />
@@ -195,7 +219,6 @@ const Booking = () => {
             </SwiperSlide>
           </Swiper>
 
-          {/* Promo Previous Button */}
           <button
             className="promo-prev absolute left-0 sm:left-[-40px] md:left-[-60px] lg:left-[-80px] top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-[#1A7F4A] text-white rounded-full flex items-center justify-center hover:bg-[#2C9D5C] transition shadow-lg text-base sm:text-lg md:text-xl lg:text-2xl font-bold"
             aria-label="Previous banner"
@@ -203,7 +226,6 @@ const Booking = () => {
             ❮
           </button>
 
-          {/* Promo Next Button */}
           <button
             className="promo-next absolute right-0 sm:right-[-40px] md:right-[-60px] lg:right-[-80px] top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-[#1A7F4A] text-white rounded-full flex items-center justify-center hover:bg-[#2C9D5C] transition shadow-lg text-base sm:text-lg md:text-xl lg:text-2xl font-bold"
             aria-label="Next banner"
@@ -212,11 +234,9 @@ const Booking = () => {
           </button>
         </div>
 
- <Howitworks/>
+        <Howitworks/>
       </div>
     </section>
-
-    
   );
 };
 

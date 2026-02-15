@@ -65,7 +65,7 @@ const Herosection = () => {
         </div>
 
         {/* Legal Text */}
-        <p className="text-white/80 text-sm xs:text-base sm:text-base md:text-lg lg:text-xl mt-5 xs:mt-6 sm:mt-6 md:mt-8 max-w-xl leading-relaxed">
+        <p className="text-white/80 text-md xs:text-md sm:text-lg md:text-lg lg:text-xl mt-5 xs:mt-6 sm:mt-6 md:mt-8 max-w-xl leading-relaxed">
           We do not store your PNR or personal data. Status is fetched securely from authorized railway APIs.
         </p>
 
