@@ -31,12 +31,6 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  // Handle Buy Now button click (no navigation)
-  const handleBuyNow = () => {
-    console.log("Buy Now clicked");
-    setIsMenuOpen(false);
-  };
-
   // Function to check if link is active
   const isActive = (path) => {
     return location.pathname === path;
@@ -113,14 +107,6 @@ const Header = () => {
                   </Link>
                 </nav>
 
-                {/* Desktop Button */}
-                <button 
-                  onClick={handleBuyNow}
-                  className="hidden sm:block bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 sm:px-5 md:px-6 py-2 rounded-full shadow-md transition"
-                >
-                  Track PNR Status
-                </button>
-
                 {/* Mobile Menu Button */}
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -172,14 +158,6 @@ const Header = () => {
                     className={`text-left px-5 py-4 hover:bg-white/5 transition ${isActive("/contact") ? "text-yellow-400" : "text-white"} border-t border-white/10`}
                   >
                     Contact Us
-                  </button>
-
-                  {/* Buy Now in Mobile Menu */}
-                  <button
-                    onClick={handleBuyNow}
-                    className="mx-5 my-4 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-3 rounded-full shadow-lg transition"
-                  >
-                    Track PNR Status
                   </button>
                 </nav>
               </div>
