@@ -118,7 +118,7 @@ const Header = () => {
                   onClick={handleBuyNow}
                   className="hidden sm:block bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 sm:px-5 md:px-6 py-2 rounded-full shadow-md transition"
                 >
-                  Buy Now
+                  Track PNR Status
                 </button>
 
                 {/* Mobile Menu Button */}
@@ -179,7 +179,7 @@ const Header = () => {
                     onClick={handleBuyNow}
                     className="mx-5 my-4 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-3 rounded-full shadow-lg transition"
                   >
-                    Buy Now
+                    Track PNR Status
                   </button>
                 </nav>
               </div>
