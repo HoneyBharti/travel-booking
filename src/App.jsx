@@ -9,6 +9,8 @@ import AboutPage from "./pages/about";
 import TermsPage from "./pages/terms";
 import PrivacyPage from "./pages/Privacy";
 import ScrollToTop from "./components/Scrolltotop";
+import PNRDetailsPage from "./pages/pnrcheck";
+// import APITest from "./pages/apitest";
 
 
 
@@ -23,6 +25,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
          <Route path="/terms" element={<TermsPage />} />
          <Route path="/privacy-policy" element={<PrivacyPage />} />
+            <Route path="/pnrcheck" element={<PNRDetailsPage />} />
+            {/* <Route path="/apitest" element={<APITest />} /> */}
 
 
       </Routes>

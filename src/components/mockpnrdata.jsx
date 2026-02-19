@@ -1,0 +1,106 @@
+// services/mockData.js
+export const mockPNRResponse = {
+  success: true,
+  data: {
+    pnrNumber: "8524877966",
+    dateOfJourney: "Feb 9, 2025 11:30:05 AM",
+    trainNumber: "11061",
+    trainName: "LTT JAYNAGAR EXP",
+    sourceStation: "LTT",
+    destinationStation: "BSB",
+    reservationUpto: "BSB",
+    boardingPoint: "LTT",
+    journeyClass: "SL",
+    numberOfpassenger: 3,
+    chartStatus: "Chart Not Prepared",
+    informationMessage: ["", ""],
+    passengerList: [
+      {
+        passengerSerialNumber: 1,
+        passengerFoodChoice: "",
+        concessionOpted: false,
+        forGoConcessionOpted: false,
+        passengerIcardFlag: false,
+        childBerthFlag: false,
+        passengerNationality: "IN",
+        passengerQuota: "PQ",
+        passengerCoachPosition: 0,
+        waitListType: 10,
+        bookingStatusIndex: 0,
+        bookingStatus: "PQWL",
+        bookingCoachId: "",
+        bookingBerthNo: 35,
+        bookingStatusDetails: "PQWL/35",
+        currentStatusIndex: 0,
+        currentStatus: "CAN",
+        currentCoachId: "",
+        currentBerthNo: 0,
+        currentStatusDetails: "CAN"
+      },
+      {
+        passengerSerialNumber: 2,
+        passengerFoodChoice: "",
+        concessionOpted: false,
+        forGoConcessionOpted: false,
+        passengerIcardFlag: false,
+        childBerthFlag: false,
+        passengerNationality: "IN",
+        passengerQuota: "PQ",
+        passengerCoachPosition: 0,
+        waitListType: 10,
+        bookingStatusIndex: 0,
+        bookingStatus: "PQWL",
+        bookingCoachId: "",
+        bookingBerthNo: 36,
+        bookingStatusDetails: "PQWL/36",
+        currentStatusIndex: 0,
+        currentStatus: "CAN",
+        currentCoachId: "",
+        currentBerthNo: 0,
+        currentStatusDetails: "CAN"
+      },
+      {
+        passengerSerialNumber: 3,
+        passengerFoodChoice: "",
+        concessionOpted: false,
+        forGoConcessionOpted: false,
+        passengerIcardFlag: false,
+        childBerthFlag: false,
+        passengerNationality: "IN",
+        passengerQuota: "PQ",
+        passengerCoachPosition: 0,
+        waitListType: 10,
+        bookingStatusIndex: 0,
+        bookingStatus: "PQWL",
+        bookingCoachId: "",
+        bookingBerthNo: 37,
+        bookingStatusDetails: "PQWL/37",
+        currentStatusIndex: 0,
+        currentStatus: "CAN",
+        currentCoachId: "",
+        currentBerthNo: 0,
+        currentStatusDetails: "CAN"
+      }
+    ],
+    timeStamp: "Nov 29, 2024 7:58:05 PM",
+    bookingFare: 1830,
+    ticketFare: 0,
+    quota: "PQ",
+    reasonType: "S",
+    ticketTypeInPrs: "E",
+    waitListType: 0,
+    bookingDate: "Oct 26, 2024 12:00:00 AM",
+    arrivalDate: "Nov 30, 2024 12:25:05 PM",
+    mobileNumber: "",
+    distance: 1472,
+    isWL: "N"
+  },
+  generatedTimeStamp: 1732890485447
+};
+
+// You can add more mock PNR responses here for testing different scenarios
+export const mockResponses = {
+  "8524877966": mockPNRResponse,
+  // Add more mock PNRs as needed
+  // "1234567890": {...}
+};

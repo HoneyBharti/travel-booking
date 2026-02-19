@@ -1,6 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Herosection = () => {
+  const [pnrNumber, setPnrNumber] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handlePNRChange = (e) => {
+    setPnrNumber(e.target.value);
+    setError("");
+  };
+
+  const handleCheckStatus = async () => {
+    // Validate PNR
+    if (!pnrNumber || pnrNumber.length !== 10) {
+      setError("Please enter a valid 10-digit PNR number");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+
+    try {
+      // Navigate to PNR details page with the PNR number in state
+      navigate("/pnrcheck", { state: { pnrNumber } });
+    } catch (err) {
+      setError("Failed to process request. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section
       className="relative w-full min-h-screen sm:min-h-[550px] md:min-h-[650px] lg:min-h-screen flex items-center overflow-hidden bg-cover bg-center"
@@ -51,17 +82,26 @@ const Herosection = () => {
             
             <input
               type="text"
+              value={pnrNumber}
+              onChange={handlePNRChange}
               placeholder="Enter 10-Digit PNR"
               maxLength="10"
               aria-label="Enter your 10-digit PNR number"
               className="w-full sm:flex-1 px-5 sm:px-6 md:px-8 h-14 xs:h-16 sm:h-16 md:h-20 rounded-lg sm:rounded-l-lg sm:rounded-r-none bg-white text-gray-700 text-base xs:text-lg sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-[#FFB500]"
             />
 
-            <button className="w-full sm:w-auto bg-[#FFB500] hover:bg-yellow-500 text-black font-semibold px-6 xs:px-8 sm:px-8 md:px-10 h-14 xs:h-16 sm:h-16 md:h-20 rounded-lg sm:rounded-r-lg sm:rounded-l-none text-base xs:text-lg sm:text-lg md:text-xl transition duration-300 whitespace-nowrap">
-              Check Status
+            <button 
+              onClick={handleCheckStatus}
+              disabled={loading}
+              className="w-full sm:w-auto bg-[#FFB500] hover:bg-yellow-500 text-black font-semibold px-6 xs:px-8 sm:px-8 md:px-10 h-14 xs:h-16 sm:h-16 md:h-20 rounded-lg sm:rounded-r-lg sm:rounded-l-none text-base xs:text-lg sm:text-lg md:text-xl transition duration-300 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading ? "Checking..." : "Check Status"}
             </button>
 
           </div>
+          {error && (
+            <p className="text-red-500 mt-2 text-sm">{error}</p>
+          )}
         </div>
 
         {/* Legal Text */}
@@ -98,6 +138,14 @@ const Herosection = () => {
         @media (min-width: 768px) and (max-width: 870px) {
           .heading-768-870 {
             font-size: 2.8rem !important;
+          }
+        }
+        
+        /* Only adjust image size for 300-340px width screens */
+        @media (min-width: 300px) and (max-width: 340px) {
+          .absolute.right-0.z-10 img {
+            height: 8rem !important;
+            max-height: 8rem !important;
           }
         }
       `}</style>
